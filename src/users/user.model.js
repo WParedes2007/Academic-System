@@ -25,7 +25,8 @@ const UserSchema = new mongoose.Schema({
     role: {
         type: String,
         required: [true, "El Rol Es Obligatorio"],
-        enum: ["TEACHER_ROLE","STUDENT_ROLE"]
+        enum: ["TEACHER_ROLE","STUDENT_ROLE"],
+        default: "STUDENT_ROLE"
     },
     cursos: [{ 
         type: mongoose.Schema.Types.ObjectId, 
