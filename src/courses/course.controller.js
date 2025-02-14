@@ -121,23 +121,42 @@ export const deleteCourse = async(req, res) => {
 
 export const updateCourse = async(req, res = response) => {
     try {
+        const { id } = req.params; // ID del curso que se va a actualizar
+        const { _id, students, ...data } = req.body; // Extraer la información del cuerpo de la solicitud
 
-        const {id} = req.params;
-        const { _id, ...data } = req.body;
-                
-        const course = await Course.findByIdAndUpdate(id, data, {new: true});
+        const course = await Course.findById(id);
+        if (!course) {
+            return res.status(404).json({
+                success: false,
+                msg: "Curso no encontrado"
+            });
+        }
+
+        const updatedCourse = await Course.findByIdAndUpdate(id, data, { new: true });
+
+        if (students) {
+            await User.updateMany(
+                { cursos: id },
+                { $pull: { cursos: id } }
+            );
+
+            await User.updateMany(
+                { _id: { $in: students } },
+                { $addToSet: { cursos: id } }
+            );
+        }
 
         res.status(200).json({
             success: true,
-            msg: "Curso Actualizado!",
-            course
-        })
+            msg: "Curso Actualizado y Alumnos Asignados!",
+            course: updatedCourse
+        });
 
     } catch (error) {
         res.status(500).json({
             success: false,
             msg: "Error Al Actualizar El Curso",
             error
-        })
+        });
     }
-}
+};

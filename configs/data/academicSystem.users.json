@@ -17,7 +17,7 @@
     "$oid": "67ad03b59d56089028cc127f"
   },
   "name": "Mateo",
-  "surname": "Samayoa",
+  "surname": "Hola",
   "username": "acarrillo",
   "email": "esamayoa@gmail.com",
   "password": "$argon2id$v=19$m=65536,t=3,p=4$AB39iIOzWs3hqbVKf0f7dg$FMNNFMzru8LVDpZj3d/poZgez02P5BvNS8Ywy1LIu6U",
@@ -33,7 +33,7 @@
       "$oid": "67acfcb99ddcc14051b9cb33"
     }
   ],
-  "estado": true,
+  "estado": false,
   "__v": 6
 },
 {
@@ -47,9 +47,6 @@
   "password": "$argon2id$v=19$m=65536,t=3,p=4$3ph7/+nutGNZcEOpw2lj0Q$loo5GDeuvhbRHaduoXtJrSuyUg+4eWhBpf51dBCusi0",
   "role": "STUDENT_ROLE",
   "cursos": [
-    {
-      "$oid": "67acfc6a9ddcc14051b9cb2d"
-    },
     {
       "$oid": "67acfcf29ddcc14051b9cb39"
     }
@@ -90,12 +87,26 @@
   "role": "STUDENT_ROLE",
   "cursos": [
     {
-      "$oid": "67acfc6a9ddcc14051b9cb2d"
+      "$oid": "67acfcb99ddcc14051b9cb33"
     },
     {
-      "$oid": "67acfcb99ddcc14051b9cb33"
+      "$oid": "67acfc6a9ddcc14051b9cb2d"
     }
   ],
   "estado": true,
   "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67aee7137eadacf2becfd6d5"
+  },
+  "name": "Derian",
+  "surname": "Hernandez",
+  "username": "matematico",
+  "email": "dhernandez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$J3HKm0UQr+GNExpsPEIx4A$Yf0qLpygq7Wgj/7aY5ZXC215UArw8yhKwayDTpsXjMY",
+  "role": "STUDENT_ROLE",
+  "cursos": [],
+  "estado": true,
+  "__v": 0
 }]
